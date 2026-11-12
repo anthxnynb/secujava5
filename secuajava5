@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class S5 {
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner(System.in);
+
+        System.out.print("Ingrese la distancia en km: ");
+        double distancia = entrada.nextDouble();
+
+        System.out.print("Ingrese el consumo en km/l: ");
+        double consumo = entrada.nextDouble();
+
+        System.out.print("Ingrese el precio del combustible: ");
+        double precio = entrada.nextDouble();
+
+        System.out.print("Ingrese el numero de peajes: ");
+        int cantidad = entrada.nextInt();
+
+        double litros = distancia / consumo;
+        double costoCombustible = litros * precio;
+        double costoPeajes = 0;
+
+        for (int i = 1; i <= cantidad; i++) {
+            System.out.print("Ingrese el costo del peaje: ");
+            double peaje = entrada.nextDouble();
+
+            costoPeajes = costoPeajes + peaje;
+        }
+
+        double total = costoCombustible + costoPeajes;
+
+        System.out.println("Litros necesarios: " + litros);
+        System.out.println("Costo de combustible: " + costoCombustible);
+        System.out.println("Costo de peajes: " + costoPeajes);
+        System.out.println("Costo total del viaje: " + total);
+
+        entrada.close();
+    }
+}
